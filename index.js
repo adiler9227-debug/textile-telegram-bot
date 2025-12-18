@@ -1,6 +1,6 @@
 import { Telegraf, Markup } from 'telegraf';
 import { createClient } from '@supabase/supabase-js';
-import OpenAI from 'openai';
+import OpenAI from 'openai;
 
 // ===== ИНИЦИАЛИЗАЦИЯ =====
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
