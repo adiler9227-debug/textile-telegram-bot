@@ -2,6 +2,14 @@ import { Telegraf, Markup } from 'telegraf';
 import { createClient } from '@supabase/supabase-js';
 import OpenAI from 'openai';
 
+// ===== ДЕБАГ ПЕРЕМЕННЫХ =====
+console.log('🔍 DEBUG: Checking environment variables...');
+console.log('TELEGRAM_BOT_TOKEN:', process.env.TELEGRAM_BOT_TOKEN ? 'EXISTS (length: ' + process.env.TELEGRAM_BOT_TOKEN.length + ')' : 'MISSING');
+console.log('SUPABASE_URL:', process.env.SUPABASE_URL ? 'EXISTS' : 'MISSING');
+console.log('SUPABASE_KEY:', process.env.SUPABASE_KEY ? 'EXISTS' : 'MISSING');
+console.log('OPENAI_API_KEY:', process.env.OPENAI_API_KEY ? 'EXISTS' : 'MISSING');
+console.log('BOSS_TELEGRAM_ID:', process.env.BOSS_TELEGRAM_ID ? 'EXISTS' : 'MISSING');
+
 // ===== ИНИЦИАЛИЗАЦИЯ =====
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
